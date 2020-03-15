@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 require 'pry'
+=======
+
+>>>>>>> b15af81d831ffde5479a5e6aa254a49e1a9352b5
 class MP3Importer
   attr_accessor :path, :file
 

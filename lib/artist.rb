@@ -8,7 +8,11 @@ class Artist
     save
   end
   def save
+<<<<<<< HEAD
     @@all << self
+=======
+    @@all << self if !@@all.include?(name)
+>>>>>>> b15af81d831ffde5479a5e6aa254a49e1a9352b5
   end
   def self.all
     @@all
@@ -20,6 +24,7 @@ class Artist
     @songs
   end
   def self.find_or_create_by_name(name)
+<<<<<<< HEAD
     if self.find(name)
       self.find(name)
     else
@@ -37,5 +42,16 @@ class Artist
 
   def print_songs()
      puts @songs.collect {|song| song.name}
+=======
+    if @@all.uniq(name)
+      @@all.find {|artist| artist.name == name}
+    else
+      artist = self.new(name)
+    end
+  end
+  def print_songs
+    self.songs
+    #Song.all.select {|song| song.artist == self}
+>>>>>>> b15af81d831ffde5479a5e6aa254a49e1a9352b5
   end
 end
